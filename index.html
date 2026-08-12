@@ -9,12 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%A9%3C/text%3E%3C/svg%3E">
 </head>
 <body>
 
   <header class="header" id="header">
-    <a href="#inicio" class="brand">LUCIANO&nbsp;DONA</a>
+    <a href="#inicio" class="brand" id="brand">LUCIANO&nbsp;DONA</a>
     <nav class="nav" id="nav">
       <a href="#sobre-mi">Sobre mí</a>
       <a href="#formacion">Formación</a>
@@ -29,7 +29,7 @@
 
   <!-- ══════════ INICIO ══════════ -->
   <section class="hero" id="inicio">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" id="heroBg"></div>
     <div class="hero-content reveal">
       <p class="hero-kicker">LUCIANO DONA · ARQUITECTURA SUSTENTABLE</p>
       <h1>
@@ -91,123 +91,149 @@
     <div class="container">
       <h2 class="section-title reveal">Cursos</h2>
       <div class="course-list">
-        <a class="course-card reveal" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">
+        <div class="course-card reveal">
           <h3>LEED Green Building Design &amp; Construction — Green BD+C</h3>
           <p>Argentina Green Building Council</p>
           <span class="year">2026</span>
-        </a>
-        <a class="course-card reveal" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">
+        </div>
+        <button class="course-card reveal" data-cert="2025-curso-etiquetadores">
           <h3>Etiquetadores de Vivienda (PRoNEV)</h3>
           <p>Secretaría de Energía de la Nación</p>
           <span class="year">2025</span>
-        </a>
-        <a class="course-card reveal" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">
+        </button>
+        <button class="course-card reveal" data-cert="2025-posgrado-unlp-taller-anlisis-trmico-lumnico-y-energetico-mediante">
           <h3>Análisis térmico, lumínico y energético mediante simulación dinámica con Design Builder</h3>
           <p>Maestría en Arquitectura y Hábitat Sustentable · Universidad Nacional de La Plata</p>
           <span class="year">2025</span>
-        </a>
-        <a class="course-card reveal" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">
+        </button>
+        <button class="course-card reveal" data-cert="2022-diseo-de-arquitectura-sostenible">
           <h3>Diseño de Arquitectura Sostenible</h3>
           <p>Universidad de Ibagué, Colombia</p>
           <span class="year">2022</span>
-        </a>
+        </button>
       </div>
 
       <h2 class="section-title reveal" id="publicaciones">Investigación y publicaciones</h2>
       <div class="pub-grid">
         <a class="pub-card reveal" href="https://www.researchgate.net/publication/412084393_Evaluacion_energetica_de_viviendas_en_la_region_centro_de_Santa_Fe_Diseno_pasivo_y_simulacion_dinamica_con_Energy_Plus" target="_blank" rel="noopener">
-          <img src="assets/pub-evaluacion.png" alt="Evaluación energética de viviendas" loading="lazy">
+          <img src="assets/pub-evaluacion.png" alt="Evaluación energética de viviendas" loading="lazy" data-nozoom>
           <h3>Evaluación energética de viviendas en la región centro de Santa Fe</h3>
           <p>Diseño pasivo y simulación dinámica con Design Builder. (2026)</p>
         </a>
         <a class="pub-card reveal" href="https://www.researchgate.net/publication/391704542_Impacto_de_la_envolvente_edilicia_en_la_demanda_energetica_para_calefaccion_residencial_en_la_region_centro_de_Santa_Fe_Estudio_de_caso_de_una_vivienda_social_en_San_Carlos_Centro" target="_blank" rel="noopener">
-          <img src="assets/pub-impacto.png" alt="Impacto de la envolvente edilicia" loading="lazy">
+          <img src="assets/pub-impacto.png" alt="Impacto de la envolvente edilicia" loading="lazy" data-nozoom>
           <h3>Impacto de la envolvente edilicia en la demanda energética para calefacción residencial</h3>
           <p>Diseño pasivo y simulación dinámica con Design Builder. (2025)</p>
         </a>
         <a class="pub-card reveal" href="https://www.researchgate.net/publication/380423567_Analisis_energetico_de_vivienda_social_San_Carlos_Sud_Santa_Fe_Argentina" target="_blank" rel="noopener">
-          <img src="assets/pub-analisis.png" alt="Análisis energético de vivienda social" loading="lazy">
+          <img src="assets/pub-analisis.png" alt="Análisis energético de vivienda social" loading="lazy" data-nozoom>
           <h3>Análisis energético de vivienda social. San Carlos Sud, Santa Fe, Argentina</h3>
           <p>Diseño pasivo y simulación con Programa Nacional de Etiquetado de Viviendas. (2024)</p>
         </a>
         <a class="pub-card reveal" href="https://www.researchgate.net/publication/362416296_Sistemas_constructivos_de_entramados_tradicionales_en_Argentina_y_Colombia_desde_un_enfoque_de_la_sustentabilidad_integral" target="_blank" rel="noopener">
-          <img src="assets/pub-sistemas.png" alt="Sistemas constructivos de entramados tradicionales" loading="lazy">
+          <img src="assets/pub-sistemas.png" alt="Sistemas constructivos de entramados tradicionales" loading="lazy" data-nozoom>
           <h3>Sistemas constructivos de entramados tradicionales en Argentina y Colombia</h3>
           <p>Enfoque de la sustentabilidad integral. Investigación colaborativa. (2022)</p>
         </a>
       </div>
       <div class="btn-row reveal">
         <a class="btn btn-outline" href="https://www.researchgate.net/profile/Luciano-Dona" target="_blank" rel="noopener">Perfil ResearchGate</a>
-        <button class="btn btn-outline" id="toggleCv" aria-expanded="false">Todos los cursos y participaciones ▾</button>
+        <button class="btn btn-solid" id="openCerts">Ver todas las certificaciones</button>
       </div>
 
-      <div class="cv-detail" id="cvDetail" hidden>
-        <div class="cv-grid">
-          <div class="cv-box reveal">
-            <h4>Idiomas</h4>
-            <ul>
-              <li>Inglés C1.1 | Universidad Nacional del Litoral (UNL)</li>
-            </ul>
-          </div>
-          <div class="cv-box reveal">
-            <h4>Cursos</h4>
-            <ul>
-              <li>LEED Green BD+C | Argentina Green Building Council | 2026</li>
-              <li>Curso de Etiquetadores de Vivienda (PRoNEV) | Secretaría de Energía de la Nación | 2025</li>
-              <li>Posgrado: Taller análisis térmico, lumínico y energético mediante simulación dinámica con Design Builder | Universidad Nacional de La Plata | 2025</li>
-              <li>Diseño de Arquitectura Sostenible | Universidad de Ibagué | 2022</li>
-              <li>Habilidades de negociación | Iklox | 2020</li>
-              <li>Eficiencia energética en el diseño inteligente de edificios | Iklox | 2020</li>
-              <li>Certificación ambiental y sostenibilidad de edificios | Iklox | 2020</li>
-            </ul>
-          </div>
-          <div class="cv-box reveal">
-            <h4>Premios</h4>
-            <ul>
-              <li>🏆 Mejor idea de proyecto en Proyectá Bio<br><em>Proyecto: Irupé Eco Turismo Flotante</em><br>Secretaría de Vinculación | UNL | 2023</li>
-              <li>🏆 Mejor modelo de negocio en Jornadas Internacionales de Jóvenes Emprendedores (JIJE)<br><em>Proyecto: Irupé Eco Turismo Flotante</em><br>Secretaría de Vinculación | UNL | 2024</li>
-            </ul>
-          </div>
-          <div class="cv-box reveal">
-            <h4>Participación universitaria</h4>
-            <ul>
-              <li>Escuela Internacional de Invierno: “De la visión global a la acción local” | UNL | 2026</li>
-              <li>Modelo UE | Fundación Nuevas Generaciones, Unión Europea en Arg. | 2025</li>
-              <li>Escuela de Invierno: “Una agenda local para el desarrollo sostenible” | UNL | 2025</li>
-              <li>Ponencia en Conferencia UR Inspiration | Fulbright Argentina | 2024</li>
-              <li>Tutoría estudiantes Intercambistas Internacionales | UNL | 2022-2024</li>
-              <li>Encuentro de Jóvenes Investigadores (EJI) | UNL | 2023</li>
-              <li>Pasantía: Docencia en Filosofía | UNL | 2021-2022</li>
-            </ul>
-          </div>
-          <div class="cv-box cv-box-wide reveal">
-            <h4>Otras actividades</h4>
-            <ul class="two-col">
-              <li>Curso: Del propósito a la acción: generando impacto en sostenibilidad | Santander Open Academy | 2026</li>
-              <li>Diseño arquitectónico en Steel Framing | Consulsteel | 2025</li>
-              <li>Foro Hábitat en clave metropolitana y sostenible | CIHALC | 2024</li>
-              <li>Curso: Aislación térmica en muros | Saint Gobain | 2024</li>
-              <li>Curso: Aprende a vender | UNL | 2024</li>
-              <li>Capacitación: La importancia de la eficiencia energética | Saint Gobain | 2024</li>
-              <li>Webinar: IA e inteligencia humana | Red Universitaria de Lenguas | 2023</li>
-              <li>Webinar: Comunicación Gráfica y desarrollo proyectual | 2023</li>
-              <li>Encuentro de Jóvenes Investigadores (EJI) | UNL | 2023</li>
-              <li>Cientibecario: Iniciación en la investigación científica | UNL | 2022</li>
-              <li>Workshop: Infraestructuras de acceso al territorio Insular | Arquisur | 2021</li>
-              <li>Curso: Cambio Climático y ciudades | Fundación DEMOS | 2021</li>
-              <li>Reflexiones sobre el hábitat urbano | Universidad Nacional de Rosario | 2020</li>
-              <li>Charla técnica ladrillo hormigón celular curado en autoclave | Retak | 2020</li>
-              <li>Capacitación: Construcción con ladrillos HCCA | Retak | 2020</li>
-              <li>Capacitación: Energía Eólica | Fundación YPF | 2020</li>
-            </ul>
-          </div>
+      <h2 class="section-title reveal" id="trayectoria">Trayectoria</h2>
+      <p class="tab-hint reveal">Los ítems con <span class="cert-mark">📜</span> tienen certificado: hacé click para verlo.</p>
+      <div class="tabs reveal" id="cvTabs">
+        <div class="tab-bar" role="tablist">
+          <button class="tab-btn active" data-tab="cursos" role="tab">Cursos</button>
+          <button class="tab-btn" data-tab="premios" role="tab">Premios</button>
+          <button class="tab-btn" data-tab="universidad" role="tab">Participación universitaria</button>
+          <button class="tab-btn" data-tab="actividades" role="tab">Otras actividades</button>
+          <button class="tab-btn" data-tab="idiomas" role="tab">Idiomas</button>
         </div>
-        <div class="btn-row">
-          <a class="btn btn-outline" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">Ver todas las certificaciones</a>
-          <a class="btn btn-solid" href="#contacto">¡Hablemos!</a>
+
+        <div class="tab-panel active" data-panel="cursos">
+          <ul class="cv-list">
+            <li>LEED Green BD+C <span class="cv-meta">Argentina Green Building Council · 2026</span></li>
+            <li><button class="cv-link" data-cert="2025-curso-etiquetadores">Curso de Etiquetadores de Vivienda (PRoNEV) 📜</button><span class="cv-meta">Secretaría de Energía de la Nación · 2025</span></li>
+            <li><button class="cv-link" data-cert="2025-posgrado-unlp-taller-anlisis-trmico-lumnico-y-energetico-mediante">Posgrado: Taller de análisis térmico, lumínico y energético mediante simulación dinámica con Design Builder 📜</button><span class="cv-meta">Universidad Nacional de La Plata · 2025</span></li>
+            <li><button class="cv-link" data-cert="2022-diseo-de-arquitectura-sostenible">Diseño de Arquitectura Sostenible 📜</button><span class="cv-meta">Universidad de Ibagué · 2022</span></li>
+            <li><button class="cv-link" data-cert="2020-iklox-habilidades-de-negociacin">Habilidades de negociación 📜</button><span class="cv-meta">Iklox · 2020</span></li>
+            <li><button class="cv-link" data-cert="2020-iklox-eficiencia-energetica-en-el-diseo-inteligente-de-edificios">Eficiencia energética en el diseño inteligente de edificios 📜</button><span class="cv-meta">Iklox · 2020</span></li>
+            <li><button class="cv-link" data-cert="2020-iklox-certificacin-ambiental-y-de-sostenibilidad-de-edificios">Certificación ambiental y sostenibilidad de edificios 📜</button><span class="cv-meta">Iklox · 2020</span></li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" data-panel="premios">
+          <ul class="cv-list cv-awards">
+            <li>
+              <button class="cv-link" data-cert="2023-proyecta-bio-1er-premio">🏆 Mejor idea de proyecto en Proyectá Bio 📜</button>
+              <span class="cv-meta">Proyecto: Irupé Eco Turismo Flotante · Secretaría de Vinculación · UNL · 2023</span>
+            </li>
+            <li>
+              🏆 Mejor modelo de negocio en Jornadas Internacionales de Jóvenes Emprendedores (JIJE)
+              <span class="cv-meta">Proyecto: Irupé Eco Turismo Flotante · Secretaría de Vinculación · UNL · 2024</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" data-panel="universidad">
+          <ul class="cv-list">
+            <li><button class="cv-link" data-cert="2026-escuela-de-invierno">Escuela Internacional de Invierno: “De la visión global a la acción local” 📜</button><span class="cv-meta">UNL · 2026</span></li>
+            <li><button class="cv-link" data-cert="2025-modelo-union-europea">Modelo UE 📜</button><span class="cv-meta">Fundación Nuevas Generaciones, Unión Europea en Arg. · 2025</span></li>
+            <li><button class="cv-link" data-cert="2025-escuela-de-invierno-unl">Escuela de Invierno: “Una agenda local para el desarrollo sostenible” 📜</button><span class="cv-meta">UNL · 2025</span></li>
+            <li><button class="cv-link" data-cert="2024-ur-inspiracin">Ponencia en Conferencia UR Inspiration 📜</button><span class="cv-meta">Fulbright Argentina · 2024</span></li>
+            <li><button class="cv-link" data-cert="2024-tutorias-unl-2024-1">Tutoría estudiantes Intercambistas Internacionales 📜</button><span class="cv-meta">UNL · 2022-2024</span></li>
+            <li><button class="cv-link" data-cert="2023-eji">Encuentro de Jóvenes Investigadores (EJI) 📜</button><span class="cv-meta">UNL · 2023</span></li>
+            <li><button class="cv-link" data-cert="2021-pasantias-en-filosofia-2021-1">Pasantía: Docencia en Filosofía 📜</button><span class="cv-meta">UNL · 2021-2022</span></li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" data-panel="actividades">
+          <ul class="cv-list cv-list-cols">
+            <li><button class="cv-link" data-cert="2026-del-propsito-a-la-accin-generando-impacto-en-sostenibilidad">Curso: Del propósito a la acción: generando impacto en sostenibilidad 📜</button><span class="cv-meta">Santander Open Academy · 2026</span></li>
+            <li><button class="cv-link" data-cert="2025-diseo-arquitectnico-en-steel-frame">Diseño arquitectónico en Steel Framing 📜</button><span class="cv-meta">Consulsteel · 2025</span></li>
+            <li><button class="cv-link" data-cert="2024-foro-habitat">Foro Hábitat en clave metropolitana y sostenible 📜</button><span class="cv-meta">CIHALC · 2024</span></li>
+            <li><button class="cv-link" data-cert="2024-saint-gobain-aislacion-termica-de-muros">Curso: Aislación térmica en muros 📜</button><span class="cv-meta">Saint Gobain · 2024</span></li>
+            <li><button class="cv-link" data-cert="2024-curso-aprender-a-vender">Curso: Aprende a vender 📜</button><span class="cv-meta">UNL · 2024</span></li>
+            <li><button class="cv-link" data-cert="2024-saint-gobain-la-importancia-de-la-eficiencia-energetica">Capacitación: La importancia de la eficiencia energética 📜</button><span class="cv-meta">Saint Gobain · 2024</span></li>
+            <li><button class="cv-link" data-cert="2023-inteligencia-artificial-e-inteligencia-humana">Webinar: IA e inteligencia humana 📜</button><span class="cv-meta">Red Universitaria de Lenguas · 2023</span></li>
+            <li><button class="cv-link" data-cert="2023-webinar-international-comunicacin-grfica-y-desarrollo-proyectual">Webinar: Comunicación Gráfica y desarrollo proyectual 📜</button><span class="cv-meta">2023</span></li>
+            <li><button class="cv-link" data-cert="2023-eji">Encuentro de Jóvenes Investigadores (EJI) 📜</button><span class="cv-meta">UNL · 2023</span></li>
+            <li><button class="cv-link" data-cert="2024-cientibeca">Cientibecario: Iniciación en la investigación científica 📜</button><span class="cv-meta">UNL · 2022</span></li>
+            <li><button class="cv-link" data-cert="2021-workshop-arquisur-2021">Workshop: Infraestructuras de acceso al territorio Insular 📜</button><span class="cv-meta">Arquisur · 2021</span></li>
+            <li><button class="cv-link" data-cert="2021-cambio-climatico-y-ciudades">Curso: Cambio Climático y ciudades 📜</button><span class="cv-meta">Fundación DEMOS · 2021</span></li>
+            <li><button class="cv-link" data-cert="2020-unr-reflexiones-sobre-el-habitat-urbano">Reflexiones sobre el hábitat urbano 📜</button><span class="cv-meta">Universidad Nacional de Rosario · 2020</span></li>
+            <li><button class="cv-link" data-cert="2020-charla-tcnica-retak">Charla técnica ladrillo hormigón celular curado en autoclave 📜</button><span class="cv-meta">Retak · 2020</span></li>
+            <li><button class="cv-link" data-cert="2020-charla-tcnica-retak">Capacitación: Construcción con ladrillos HCCA 📜</button><span class="cv-meta">Retak · 2020</span></li>
+            <li><button class="cv-link" data-cert="2020-energa-eolica-ypf">Capacitación: Energía Eólica 📜</button><span class="cv-meta">Fundación YPF · 2020</span></li>
+          </ul>
+        </div>
+
+        <div class="tab-panel" data-panel="idiomas">
+          <ul class="cv-list">
+            <li><button class="cv-link" data-cert="2023-ingles-c1-1">Inglés C1.1 📜</button><span class="cv-meta">Universidad Nacional del Litoral (UNL)</span></li>
+            <li>Español <span class="cv-meta">Nativo</span></li>
+          </ul>
         </div>
       </div>
     </div>
+  </section>
+
+  <!-- ══════════ PARALLAX ══════════ -->
+  <section class="parallax" id="parallax" aria-hidden="true">
+    <div class="px-layer px-topo" data-speed="0.25"></div>
+    <div class="px-layer px-blobs" data-speed="0.45">
+      <span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span>
+    </div>
+    <div class="px-layer px-leaves" data-speed="0.7">
+      <svg class="leaf l1" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      <svg class="leaf l2" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+      <svg class="leaf l3" viewBox="0 0 24 24" fill="currentColor"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>
+    </div>
+    <blockquote class="px-quote" data-speed="0.12">
+      <p>“Diseñar con el clima,<br>construir con conciencia.”</p>
+    </blockquote>
   </section>
 
   <!-- ══════════ EFICIENCIA ENERGÉTICA ══════════ -->
@@ -233,24 +259,21 @@
       </div>
 
       <div class="campo reveal">
-        <div class="campo-text">
-          <h2 class="section-title">Simulaciones y trabajo de campo</h2>
-          <div class="campo-grid">
-            <figure class="campo-item">
-              <img src="assets/sim-vientos.png" alt="Simulación de vientos" loading="lazy">
-              <figcaption>✔ Simulación de vientos</figcaption>
-            </figure>
-            <figure class="campo-item">
-              <img src="assets/medicion-higrotermica.jpg" alt="Medición higrotérmica" loading="lazy">
-              <figcaption>✔ Medición higrotérmica</figcaption>
-            </figure>
-            <figure class="campo-item">
-              <img src="assets/termografia.jpg" alt="Termografía" loading="lazy">
-              <figcaption>✔ Termografía</figcaption>
-            </figure>
-          </div>
+        <h2 class="section-title">Simulaciones y trabajo de campo</h2>
+        <div class="campo-grid">
+          <figure class="campo-item">
+            <img src="assets/sim-vientos.png" alt="Simulación de vientos" loading="lazy">
+            <figcaption>✔ Simulación de vientos</figcaption>
+          </figure>
+          <figure class="campo-item">
+            <img src="assets/medicion-higrotermica.jpg" alt="Medición higrotérmica" loading="lazy">
+            <figcaption>✔ Medición higrotérmica</figcaption>
+          </figure>
+          <figure class="campo-item">
+            <img src="assets/termografia.jpg" alt="Termografía" loading="lazy">
+            <figcaption>✔ Termografía</figcaption>
+          </figure>
         </div>
-        <img class="campo-figure" src="assets/trabajo-campo.png" alt="Luciano midiendo con cámara termográfica" loading="lazy">
       </div>
     </div>
   </section>
@@ -347,6 +370,29 @@
   <footer class="footer">
     <p>© 2026 Luciano Dona · Arquitectura y eficiencia energética · Santa Fe, Argentina</p>
   </footer>
+
+  <!-- ══════════ Modal certificaciones ══════════ -->
+  <div class="certs-modal" id="certsModal" hidden>
+    <div class="certs-dialog" role="dialog" aria-modal="true" aria-label="Certificaciones">
+      <div class="certs-head">
+        <h3>Certificaciones</h3>
+        <a class="certs-drive" href="https://drive.google.com/drive/folders/1YDBi1S91PjqGZ8qlp73sF-b7DEKX5xI2?usp=drive_link" target="_blank" rel="noopener">Abrir carpeta en Drive ↗</a>
+        <button class="certs-close" id="certsClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div class="certs-grid" id="certsGrid"></div>
+    </div>
+  </div>
+
+  <!-- ══════════ Lightbox ══════════ -->
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lb-close" id="lbClose" aria-label="Cerrar">✕</button>
+    <button class="lb-prev" id="lbPrev" aria-label="Anterior">‹</button>
+    <figure class="lb-figure">
+      <img id="lbImg" src="" alt="">
+      <figcaption id="lbCaption"></figcaption>
+    </figure>
+    <button class="lb-next" id="lbNext" aria-label="Siguiente">›</button>
+  </div>
 
   <script src="script.js"></script>
 </body>
