@@ -153,16 +153,20 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
   overflow: hidden;
 }
 
+/* el desenfoque viene aplicado en el archivo: pesa menos que blur() y evita
+   los bordes lavados que deja filtrar un elemento a pantalla completa */
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('assets/hero.png') center 30% / cover no-repeat;
+  background: url('assets/hero.jpg') center 45% / cover no-repeat;
 }
 .hero-bg::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(20, 30, 28, 0.55), rgba(20, 30, 28, 0.65));
+  background:
+    radial-gradient(ellipse 88% 62% at 50% 46%, rgba(29, 42, 40, 0.32), rgba(9, 17, 15, 0.9) 76%),
+    linear-gradient(174deg, rgba(9, 17, 15, 0.55), rgba(47, 96, 92, 0.42) 48%, rgba(9, 17, 15, 0.78));
 }
 
 .hero-content { position: relative; z-index: 1; color: var(--white); padding: 0 24px; }
