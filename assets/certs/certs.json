@@ -222,6 +222,12 @@
   "h": 990
  },
  {
+  "slug": "2024-jije-mejor-modelo-de-negocio",
+  "title": "2024. JIJE. Mejor modelo de negocio",
+  "w": 1400,
+  "h": 1082
+ },
+ {
   "slug": "2024-saint-gobain-aislacion-termica-de-muros",
   "title": "2024. Saint Gobain - Aislacion termica de muros",
   "w": 1400,
@@ -292,5 +298,11 @@
   "title": "2026. Escuela de invierno",
   "w": 1400,
   "h": 991
+ },
+ {
+  "slug": "2026-leed-green-bd-c",
+  "title": "2026. LEED Green BD+C. Argentina Green Building Council",
+  "w": 1400,
+  "h": 1050
  }
 ]

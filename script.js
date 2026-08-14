@@ -1,3 +1,64 @@
+// ── i18n ──────────────────────────────────────────────
+const LANG_KEY = 'ld-lang';
+const i18nNodes = [...document.querySelectorAll('[data-i18n]')];
+const i18nAttrNodes = [...document.querySelectorAll('[data-i18n-attr]')];
+let lang = 'es';
+
+// `data-i18n-attr` holds a comma-separated list of `attribute:key` pairs
+const attrPairs = (el) =>
+  el.dataset.i18nAttr.split(',').map((p) => {
+    const i = p.indexOf(':');
+    return [p.slice(0, i).trim(), p.slice(i + 1).trim()];
+  });
+
+// Spanish lives in the markup, so snapshot it before anything replaces it
+const esAttrs = new WeakMap();
+i18nNodes.forEach((el) => { el.dataset.es = el.innerHTML; });
+i18nAttrNodes.forEach((el) => {
+  esAttrs.set(el, Object.fromEntries(attrPairs(el).map(([attr]) => [attr, el.getAttribute(attr)])));
+});
+
+function t(key) {
+  if (lang === 'en') return window.I18N_EN[key];
+  return window.I18N_ES_EXTRA[key];
+}
+
+function setLang(next) {
+  lang = next === 'en' ? 'en' : 'es';
+  const dict = window.I18N_EN;
+
+  i18nNodes.forEach((el) => {
+    const key = el.dataset.i18n;
+    if (lang === 'es') el.innerHTML = el.dataset.es;
+    else if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+
+  i18nAttrNodes.forEach((el) => {
+    const originals = esAttrs.get(el);
+    attrPairs(el).forEach(([attr, key]) => {
+      const value = lang === 'es' ? originals[attr] : dict[key];
+      if (value !== undefined && value !== null) el.setAttribute(attr, value);
+    });
+  });
+
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.lang-btn').forEach((b) => {
+    const on = b.dataset.lang === lang;
+    b.classList.toggle('is-active', on);
+    b.setAttribute('aria-pressed', String(on));
+  });
+  try { localStorage.setItem(LANG_KEY, lang); } catch { /* private mode */ }
+}
+
+document.getElementById('langSwitch').addEventListener('click', (e) => {
+  const btn = e.target.closest('.lang-btn');
+  if (btn) setLang(btn.dataset.lang);
+});
+
+let savedLang = null;
+try { savedLang = localStorage.getItem(LANG_KEY); } catch { /* private mode */ }
+if (savedLang === 'en') setLang('en');
+
 // Mobile nav
 const nav = document.getElementById('nav');
 const navToggle = document.getElementById('navToggle');
@@ -166,13 +227,69 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && !certsModal.hidden && lightbox.hidden) closeCerts();
 });
 
-// ── Parallax ──────────────────────────────────────────
+// ── Parallax + recorrido solar ────────────────────────
 const parallax = document.getElementById('parallax');
 const heroBg = document.getElementById('heroBg');
 const pxLayers = [...document.querySelectorAll('.px-layer, .px-quote')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-if (!reducedMotion) {
+// Scene geometry, in the SVG's own coordinates (viewBox 0 0 1200 560)
+const GROUND = 500;
+const ARC_CX = 600;
+const ARC_R = 460;
+const SQUASH = 0.1; // how far the shadow "lies down" into the ground plane
+const MAX_SHEAR = 2.2; // keeps the longest shadow inside the viewBox
+// Outline of the house, walked clockwise from its bottom-left corner
+const SILHOUETTE = [
+  [500, GROUND], [500, 380], [480, 380], [600, 306], [720, 380], [700, 380], [700, GROUND],
+];
+
+const sunDot = document.getElementById('sunDot');
+const sunShadow = document.getElementById('sunShadow');
+const sunRays = document.getElementById('sunRays');
+const ray1 = document.getElementById('ray1');
+const ray2 = document.getElementById('ray2');
+
+// phase 0 = sunrise on the left, 1 = sunset on the right
+function drawSun(phase) {
+  const angle = Math.PI * phase;
+  const sunX = ARC_CX - ARC_R * Math.cos(angle);
+  const sunY = GROUND - ARC_R * Math.sin(angle);
+  sunDot.setAttribute('cx', sunX.toFixed(1));
+  sunDot.setAttribute('cy', sunY.toFixed(1));
+
+  // Sunlight is parallel, so the shadow is the silhouette sheared sideways by an
+  // amount that grows as the sun gets lower, then flattened onto the ground plane.
+  const altitude = Math.max(Math.sin(angle), 1e-3);
+  const shear = Math.max(-MAX_SHEAR, Math.min(MAX_SHEAR, Math.cos(angle) / altitude));
+  const project = ([x, y]) => {
+    const h = GROUND - y;
+    return [x + shear * h, GROUND + SQUASH * h];
+  };
+  const projected = SILHOUETTE.map(project);
+  sunShadow.setAttribute(
+    'points',
+    projected.map(([x, y]) => `${x.toFixed(1)},${y.toFixed(1)}`).join(' ')
+  );
+  sunShadow.style.opacity = (0.55 + 0.45 * altitude).toFixed(2);
+
+  // Rays only read as rays once the sun is high enough for them not to skim the ground
+  const rayFade = Math.max(0, Math.min(1, (altitude - 0.42) / 0.25));
+  sunRays.style.opacity = rayFade.toFixed(2);
+  if (rayFade > 0) {
+    [[SILHOUETTE[3], ray1], [SILHOUETTE[shear >= 0 ? 4 : 2], ray2]].forEach(([point, line]) => {
+      const [tipX, tipY] = project(point);
+      line.setAttribute('x1', sunX.toFixed(1));
+      line.setAttribute('y1', sunY.toFixed(1));
+      line.setAttribute('x2', tipX.toFixed(1));
+      line.setAttribute('y2', tipY.toFixed(1));
+    });
+  }
+}
+
+if (reducedMotion) {
+  drawSun(0.5);
+} else {
   let ticking = false;
   const updateParallax = () => {
     ticking = false;
@@ -187,10 +304,14 @@ if (!reducedMotion) {
         layer.style.transform = `translateY(${-progress * layer.dataset.speed}px)`;
       });
     }
+    const span = window.innerHeight + rect.height;
+    const phase = Math.max(0, Math.min(1, (window.innerHeight - rect.top) / span));
+    drawSun(phase);
   };
   window.addEventListener('scroll', () => {
     if (!ticking) { ticking = true; requestAnimationFrame(updateParallax); }
   }, { passive: true });
+  window.addEventListener('resize', updateParallax, { passive: true });
   updateParallax();
 }
 
@@ -211,9 +332,9 @@ function donutRain() {
   if (!toast) {
     toast = document.createElement('div');
     toast.className = 'donut-toast';
-    toast.textContent = '¡Encontraste la dona verde! 🍩🌱';
     document.body.appendChild(toast);
   }
+  toast.textContent = t('egg.toast');
   requestAnimationFrame(() => toast.classList.add('show'));
   clearTimeout(toast._t);
   toast._t = setTimeout(() => toast.classList.remove('show'), 3200);
