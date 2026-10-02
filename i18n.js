@@ -5,7 +5,7 @@ const MARK = '<span class="cert-mark" aria-hidden="true"></span>';
 window.I18N_EN = {
   'meta.title': 'Luciano Dona — Architecture and Energy Efficiency',
   'meta.description':
-    'Luciano Dona. Advanced architecture student, specialist in energy efficiency. Let us build the future of a sustainable planet together.',
+    'Luciano Dona. Architect, specialist in energy efficiency. Let us build the future of a sustainable planet together.',
 
   'nav.about': 'About me',
   'nav.formacion': 'Training',
@@ -13,15 +13,18 @@ window.I18N_EN = {
   'nav.obras': 'Built work',
   'nav.contacto': 'Contact',
   'nav.toggle': 'Open menu',
+  'brand.role': 'ARCHITECT',
 
   'hero.kicker': 'LUCIANO DONA · SUSTAINABLE ARCHITECTURE',
   'hero.title':
     '<span class="grad">Let’s build together</span><br>the future of a<br>sustainable planet',
   'hero.cue': 'Get to know me',
+  'hero.coords': '31°38′S · 60°42′W',
+  'hero.portraitAlt': 'Luciano Dona, architect',
 
   'about.photoAlt': 'Luciano Dona photographing birds',
   'about.role':
-    '<strong>ADVANCED ARCHITECTURE STUDENT</strong><br>UNIVERSIDAD NACIONAL DEL LITORAL · SANTA FE, ARG.',
+    '<strong>ARCHITECT</strong><br>UNIVERSIDAD NACIONAL DEL LITORAL · SANTA FE, ARG.',
   'about.bio':
     'Specialist in Energy Efficiency.<br>Researcher and chess player.<br>In my free time I like photographing birds.',
   'about.question': 'What would you like to know about me?',
@@ -30,10 +33,10 @@ window.I18N_EN = {
   'chip.obras': 'Built work',
   'about.contactLabel': 'Contact:',
 
-  'title.cursos': 'Courses',
+  'title.cursos': 'Featured courses',
   'course.leed.h': 'LEED Green Building Design &amp; Construction — Green BD+C',
   'course.leed.p': 'Argentina Green Building Council',
-  'course.etiq.h': 'Home Energy Labelling (PRoNEV)',
+  'course.etiq.h': 'Home Energy Labelling (PRONEV)',
   'course.etiq.p': 'Argentine National Secretariat of Energy',
   'course.unlp.h':
     'Thermal, lighting and energy analysis through dynamic simulation with Design Builder',
@@ -67,7 +70,7 @@ window.I18N_EN = {
 
   'cv.leed': `LEED Green BD+C ${MARK}`,
   'cv.leed.m': 'Argentina Green Building Council · 2026',
-  'cv.etiq': `Home Energy Labelling course (PRoNEV) ${MARK}`,
+  'cv.etiq': `Home Energy Labelling course (PRONEV) ${MARK}`,
   'cv.etiq.m': 'Argentine National Secretariat of Energy · 2025',
   'cv.unlp': `Postgraduate: Workshop on thermal, lighting and energy analysis through dynamic simulation with Design Builder ${MARK}`,
   'cv.unlp.m': 'Universidad Nacional de La Plata · 2025',

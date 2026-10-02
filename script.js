@@ -229,7 +229,6 @@ document.addEventListener('keydown', (e) => {
 
 // ── Parallax + recorrido solar ────────────────────────
 const parallax = document.getElementById('parallax');
-const heroBg = document.getElementById('heroBg');
 const pxLayers = [...document.querySelectorAll('.px-layer, .px-quote')];
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -293,10 +292,6 @@ if (reducedMotion) {
   let ticking = false;
   const updateParallax = () => {
     ticking = false;
-    const sc = window.scrollY;
-    if (sc < window.innerHeight) {
-      heroBg.style.transform = `translateY(${sc * 0.35}px)`;
-    }
     const rect = parallax.getBoundingClientRect();
     if (rect.bottom > 0 && rect.top < window.innerHeight) {
       const progress = rect.top + rect.height / 2 - window.innerHeight / 2;
@@ -313,6 +308,60 @@ if (reducedMotion) {
   }, { passive: true });
   window.addEventListener('resize', updateParallax, { passive: true });
   updateParallax();
+}
+
+// ── Hero: capas en profundidad (scroll + mouse) ───────
+// Each layer has `data-scroll` (px per px scrolled) and `data-depth` (how far it
+// follows the pointer; negative values move against it). They are written to the
+// `translate` property so they compose with the entry animations on `transform`.
+const hero = document.getElementById('inicio');
+const heroLayers = [...hero.querySelectorAll('[data-depth]')].map((el) => ({
+  el,
+  depth: Number(el.dataset.depth),
+  scroll: Number(el.dataset.scroll || 0),
+}));
+const heroContent = hero.querySelector('.hero-content');
+const POINTER_X = 26;
+const POINTER_Y = 16;
+
+if (!reducedMotion) {
+  const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const target = { x: 0, y: 0 };
+  const current = { x: 0, y: 0 };
+  let heroVisible = true;
+  let raf = 0;
+
+  const renderHero = () => {
+    raf = 0;
+    current.x += (target.x - current.x) * 0.08;
+    current.y += (target.y - current.y) * 0.08;
+    const sc = Math.min(window.scrollY, window.innerHeight);
+    heroLayers.forEach(({ el, depth, scroll }) => {
+      const x = current.x * depth * POINTER_X;
+      const y = current.y * depth * POINTER_Y + sc * scroll;
+      el.style.translate = `${x.toFixed(2)}px ${y.toFixed(2)}px`;
+    });
+    heroContent.style.opacity = Math.max(0, 1 - sc / (window.innerHeight * 0.65)).toFixed(3);
+    const settling = Math.abs(target.x - current.x) + Math.abs(target.y - current.y) > 0.001;
+    if (settling && heroVisible) raf = requestAnimationFrame(renderHero);
+  };
+  const requestHero = () => { if (!raf) raf = requestAnimationFrame(renderHero); };
+
+  if (finePointer) {
+    window.addEventListener('pointermove', (e) => {
+      if (!heroVisible) return;
+      target.x = (e.clientX / window.innerWidth) * 2 - 1;
+      target.y = (e.clientY / window.innerHeight) * 2 - 1;
+      requestHero();
+    }, { passive: true });
+    document.addEventListener('pointerleave', () => { target.x = 0; target.y = 0; requestHero(); });
+  }
+  new IntersectionObserver(([entry]) => {
+    heroVisible = entry.isIntersecting;
+    if (heroVisible) requestHero();
+  }).observe(hero);
+  window.addEventListener('scroll', () => { if (heroVisible) requestHero(); }, { passive: true });
+  requestHero();
 }
 
 // ── Easter egg: la dona verde ─────────────────────────

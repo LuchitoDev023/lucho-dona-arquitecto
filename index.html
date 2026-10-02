@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n="meta.title">Luciano Dona — Arquitectura y Eficiencia Energética</title>
-  <meta name="description" data-i18n-attr="content:meta.description" content="Luciano Dona. Estudiante avanzado de arquitectura, especialista en eficiencia energética. Construyamos juntos el futuro de un planeta sustentable.">
+  <meta name="description" data-i18n-attr="content:meta.description" content="Luciano Dona. Arquitecto, especialista en eficiencia energética. Construyamos juntos el futuro de un planeta sustentable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
 
   <header class="header" id="header">
     <div class="header-left">
-      <a href="#inicio" class="brand" id="brand">LUCIANO&nbsp;DONA</a>
+      <a href="#inicio" class="brand" id="brand">LUCIANO&nbsp;DONA<span class="brand-role"><span class="brand-sep" aria-hidden="true">|</span><span data-i18n="brand.role">ARQUITECTO</span></span></a>
       <div class="lang-switch" id="langSwitch" role="group" aria-label="Idioma / Language">
         <button class="lang-btn is-active" data-lang="es" type="button" aria-pressed="true">ES</button>
         <button class="lang-btn" data-lang="en" type="button" aria-pressed="false">EN</button>
@@ -35,18 +35,33 @@
 
   <!-- ══════════ INICIO ══════════ -->
   <section class="hero" id="inicio">
-    <div class="hero-bg" id="heroBg"></div>
-    <div class="hero-content reveal">
-      <p class="hero-kicker" data-i18n="hero.kicker">LUCIANO DONA · ARQUITECTURA SUSTENTABLE</p>
-      <h1 data-i18n="hero.title">
-        <span class="grad">Construyamos juntos</span><br>
-        el futuro de un<br>
-        planeta sustentable
-      </h1>
-      <a href="#sobre-mi" class="hero-cue">
-        <span data-i18n="hero.cue">Conocé sobre mí</span>
-        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
-      </a>
+    <div class="hero-bg" id="heroBg" data-depth="-0.4" data-scroll="0.35"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-content" data-depth="0.35" data-scroll="-0.22">
+        <p class="hero-kicker" data-i18n="hero.kicker">LUCIANO DONA · ARQUITECTURA SUSTENTABLE</p>
+        <h1 data-i18n="hero.title">
+          <span class="grad">Construyamos juntos</span><br>
+          el futuro de un<br>
+          planeta sustentable
+        </h1>
+        <a href="#sobre-mi" class="hero-cue">
+          <span data-i18n="hero.cue">Conocé sobre mí</span>
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </a>
+      </div>
+      <div class="hero-figure">
+        <!-- anillo y órbita: el mismo trazo punteado del recorrido solar -->
+        <svg class="hero-orbit" data-depth="-0.6" data-scroll="0.3" viewBox="0 0 600 600" aria-hidden="true">
+          <circle class="orbit-ring" cx="300" cy="300" r="236" pathLength="1"/>
+          <circle class="orbit-dash" cx="300" cy="300" r="282"/>
+          <g class="orbit-spin">
+            <circle class="orbit-dot" cx="300" cy="18" r="5"/>
+          </g>
+        </svg>
+        <span class="hero-coords" data-depth="-0.9" data-scroll="0.45" aria-hidden="true" data-i18n="hero.coords">31°38′S · 60°42′O</span>
+        <img class="hero-portrait" data-depth="0.5" data-scroll="0.12" src="assets/retrato.webp" width="896" height="917" alt="Luciano Dona, arquitecto" data-i18n-attr="alt:hero.portraitAlt" data-nozoom fetchpriority="high">
+      </div>
     </div>
   </section>
 
@@ -59,7 +74,7 @@
       <div class="about-text reveal">
         <h2 class="display">Luciano Dona</h2>
         <p class="about-role" data-i18n="about.role">
-          <strong>ESTUDIANTE AVANZADO DE ARQUITECTURA</strong><br>
+          <strong>ARQUITECTO</strong><br>
           UNIVERSIDAD NACIONAL DEL LITORAL · SANTA FE, ARG.
         </p>
         <p class="about-bio" data-i18n="about.bio">
@@ -95,7 +110,7 @@
   <!-- ══════════ FORMACIÓN ══════════ -->
   <section class="section formacion" id="formacion">
     <div class="container">
-      <h2 class="section-title reveal" data-i18n="title.cursos">Cursos</h2>
+      <h2 class="section-title reveal" data-i18n="title.cursos">Cursos destacados</h2>
       <div class="course-list">
         <button class="course-card reveal" data-cert="2026-leed-green-bd-c">
           <h3 data-i18n="course.leed.h">LEED Green Building Design &amp; Construction — Green BD+C</h3>
@@ -103,7 +118,7 @@
           <span class="year">2026</span>
         </button>
         <button class="course-card reveal" data-cert="2025-curso-etiquetadores">
-          <h3 data-i18n="course.etiq.h">Etiquetadores de Vivienda (PRoNEV)</h3>
+          <h3 data-i18n="course.etiq.h">Etiquetadores de Vivienda (PRONEV)</h3>
           <p data-i18n="course.etiq.p">Secretaría de Energía de la Nación</p>
           <span class="year">2025</span>
         </button>
@@ -160,7 +175,7 @@
         <div class="tab-panel active" data-panel="cursos">
           <ul class="cv-list">
             <li><button class="cv-link" data-cert="2026-leed-green-bd-c" data-i18n="cv.leed">LEED Green BD+C <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.leed.m">Argentina Green Building Council · 2026</span></li>
-            <li><button class="cv-link" data-cert="2025-curso-etiquetadores" data-i18n="cv.etiq">Curso de Etiquetadores de Vivienda (PRoNEV) <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.etiq.m">Secretaría de Energía de la Nación · 2025</span></li>
+            <li><button class="cv-link" data-cert="2025-curso-etiquetadores" data-i18n="cv.etiq">Curso de Etiquetadores de Vivienda (PRONEV) <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.etiq.m">Secretaría de Energía de la Nación · 2025</span></li>
             <li><button class="cv-link" data-cert="2025-posgrado-unlp-taller-anlisis-trmico-lumnico-y-energetico-mediante" data-i18n="cv.unlp">Posgrado: Taller de análisis térmico, lumínico y energético mediante simulación dinámica con Design Builder <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.unlp.m">Universidad Nacional de La Plata · 2025</span></li>
             <li><button class="cv-link" data-cert="2022-diseo-de-arquitectura-sostenible" data-i18n="cv.sost">Diseño de Arquitectura Sostenible <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.sost.m">Universidad de Ibagué · 2022</span></li>
             <li><button class="cv-link" data-cert="2020-iklox-habilidades-de-negociacin" data-i18n="cv.nego">Habilidades de negociación <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.iklox.m">Iklox · 2020</span></li>
@@ -190,6 +205,7 @@
             <li><button class="cv-link" data-cert="2024-ur-inspiracin" data-i18n="cv.ur">Ponencia en Conferencia UR Inspiration <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.ur.m">Fulbright Argentina · 2024</span></li>
             <li><button class="cv-link" data-cert="2024-tutorias-unl-2024-1" data-i18n="cv.tut">Tutoría estudiantes Intercambistas Internacionales <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.tut.m">UNL · 2022-2024</span></li>
             <li><button class="cv-link" data-cert="2023-eji" data-i18n="cv.eji">Encuentro de Jóvenes Investigadores (EJI) <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.unl23.m">UNL · 2023</span></li>
+            <li><button class="cv-link" data-cert="2024-cientibeca" data-i18n="cv.cienti">Cientibecario: Iniciación en la investigación científica <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.unl22.m">UNL · 2022</span></li>
             <li><button class="cv-link" data-cert="2021-pasantias-en-filosofia-2021-1" data-i18n="cv.filo">Pasantía: Docencia en Filosofía <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.filo.m">UNL · 2021-2022</span></li>
           </ul>
         </div>
@@ -205,7 +221,6 @@
             <li><button class="cv-link" data-cert="2023-inteligencia-artificial-e-inteligencia-humana" data-i18n="cv.ia">Webinar: IA e inteligencia humana <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.ia.m">Red Universitaria de Lenguas · 2023</span></li>
             <li><button class="cv-link" data-cert="2023-webinar-international-comunicacin-grfica-y-desarrollo-proyectual" data-i18n="cv.grafica">Webinar: Comunicación Gráfica y desarrollo proyectual <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.grafica.m">2023</span></li>
             <li><button class="cv-link" data-cert="2023-eji" data-i18n="cv.eji">Encuentro de Jóvenes Investigadores (EJI) <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.unl23.m">UNL · 2023</span></li>
-            <li><button class="cv-link" data-cert="2024-cientibeca" data-i18n="cv.cienti">Cientibecario: Iniciación en la investigación científica <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.unl22.m">UNL · 2022</span></li>
             <li><button class="cv-link" data-cert="2021-workshop-arquisur-2021" data-i18n="cv.arquisur">Workshop: Infraestructuras de acceso al territorio Insular <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.arquisur.m">Arquisur · 2021</span></li>
             <li><button class="cv-link" data-cert="2021-cambio-climatico-y-ciudades" data-i18n="cv.clima">Curso: Cambio Climático y ciudades <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.clima.m">Fundación DEMOS · 2021</span></li>
             <li><button class="cv-link" data-cert="2020-unr-reflexiones-sobre-el-habitat-urbano" data-i18n="cv.habitat">Reflexiones sobre el hábitat urbano <span class="cert-mark" aria-hidden="true"></span></button><span class="cv-meta" data-i18n="cv.habitat.m">Universidad Nacional de Rosario · 2020</span></li>
@@ -280,7 +295,7 @@
           <p data-i18n="ee1.p">Modelado energético con Design Builder y Energy Plus.</p>
         </article>
         <article class="ee-card reveal">
-          <img src="assets/etiquetado.png" alt="Etiquetado de viviendas PRoNEV" loading="lazy">
+          <img src="assets/etiquetado.png" alt="Etiquetado de viviendas PRONEV" loading="lazy">
           <h3 data-i18n="ee2.h">Etiquetado de viviendas</h3>
           <p data-i18n="ee2.p">Cálculo de Índice de Prestaciones Energéticas.</p>
         </article>
