@@ -19,7 +19,7 @@ window.I18N_EN = {
   'hero.title':
     '<span class="grad">Let’s build together</span><br>the future of a<br>sustainable planet',
   'hero.cue': 'Get to know me',
-  'hero.coords': '31°38′S · 60°42′W',
+  'hero.coords': '31°44′S · 61°06′W',
   'hero.portraitAlt': 'Luciano Dona, architect',
 
   'about.photoAlt': 'Luciano Dona photographing birds',

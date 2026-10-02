@@ -55,11 +55,19 @@
         <svg class="hero-orbit" data-depth="-0.6" data-scroll="0.3" viewBox="0 0 600 600" aria-hidden="true">
           <circle class="orbit-ring" cx="300" cy="300" r="236" pathLength="1"/>
           <circle class="orbit-dash" cx="300" cy="300" r="282"/>
+          <defs>
+            <radialGradient id="sunGlow">
+              <stop offset="0" stop-color="#b8f59a" stop-opacity="0.75"/>
+              <stop offset="0.35" stop-color="#7ed957" stop-opacity="0.3"/>
+              <stop offset="1" stop-color="#7ed957" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
           <g class="orbit-spin">
-            <circle class="orbit-dot" cx="300" cy="18" r="5"/>
+            <circle class="orbit-glow" cx="300" cy="18" r="34"/>
+            <circle class="orbit-dot" cx="300" cy="18" r="6"/>
           </g>
         </svg>
-        <span class="hero-coords" data-depth="-0.9" data-scroll="0.45" aria-hidden="true" data-i18n="hero.coords">31°38′S · 60°42′O</span>
+        <span class="hero-coords" data-depth="-0.9" data-scroll="0.45" aria-hidden="true" data-i18n="hero.coords">31°44′S · 61°06′O</span>
         <img class="hero-portrait" data-depth="0.5" data-scroll="0.12" src="assets/retrato.webp" width="896" height="917" alt="Luciano Dona, arquitecto" data-i18n-attr="alt:hero.portraitAlt" data-nozoom fetchpriority="high">
       </div>
     </div>
