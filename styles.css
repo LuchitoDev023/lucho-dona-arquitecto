@@ -207,7 +207,6 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
   color: var(--white);
   text-align: left;
   padding-bottom: 4vh;
-  will-change: transform;
 }
 
 .hero-kicker {
@@ -256,7 +255,6 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
   height: 100%;
   width: 100%;
   filter: drop-shadow(0 18px 40px rgba(5, 12, 10, 0.45));
-  will-change: transform;
   /* se funde con el borde inferior del hero */
   -webkit-mask: linear-gradient(to bottom, #000 82%, transparent 100%);
   mask: linear-gradient(to bottom, #000 82%, transparent 100%);
@@ -271,7 +269,6 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
   transform: translate(-50%, -50%);
   overflow: visible;
   pointer-events: none;
-  will-change: transform;
 }
 .orbit-ring {
   fill: none;
@@ -303,7 +300,6 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
   letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.55);
   writing-mode: vertical-rl;
-  will-change: transform;
 }
 .hero-coords::before {
   content: '';
@@ -317,7 +313,7 @@ h1, h2, h3, h4 { font-weight: 500; color: var(--green-ink); }
 
 /* ── entrada ── */
 @keyframes hero-rise {
-  from { opacity: 0; transform: translateY(60px) scale(0.97); filter: blur(8px) drop-shadow(0 18px 40px rgba(5, 12, 10, 0.45)); }
+  from { opacity: 0; transform: translateY(60px); }
 }
 @keyframes hero-fade-up { from { opacity: 0; transform: translateY(28px); } }
 @keyframes ring-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
