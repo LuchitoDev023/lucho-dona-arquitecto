@@ -3,6 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://lucianodona.com.ar/">
+  <script>
+    // la dirección anterior redirige al dominio propio, conservando ruta y ancla
+    if (location.hostname === 'lucho-dona-arquitecto.vercel.app') {
+      location.replace('https://lucianodona.com.ar' + location.pathname + location.search + location.hash);
+    }
+  </script>
   <title data-i18n="meta.title">Luciano Dona — Arquitectura y Eficiencia Energética</title>
   <meta name="description" data-i18n-attr="content:meta.description" content="Luciano Dona. Arquitecto, especialista en eficiencia energética. Construyamos juntos el futuro de un planeta sustentable.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
