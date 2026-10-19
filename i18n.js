@@ -3,9 +3,9 @@
 const MARK = '<span class="cert-mark" aria-hidden="true"></span>';
 
 window.I18N_EN = {
-  'meta.title': 'Luciano Dona — Architecture and Energy Efficiency',
+  'meta.title': 'Luciano Dona | Architect in energy efficiency',
   'meta.description':
-    'Luciano Dona. Architect, specialist in energy efficiency. Let us build the future of a sustainable planet together.',
+    'Luciano Dona, architect specialising in building energy efficiency: energy simulation, home energy labelling, research and built work in Santa Fe, Argentina.',
 
   'nav.about': 'About me',
   'nav.formacion': 'Training',
